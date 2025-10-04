@@ -1,9 +1,3 @@
-locals {
-  nacl_config = {}           # yaha aap runtime ya .tfvars se define karenge
-  nacl_association_map = {}  # same
-}
-
-
 resource "aws_network_acl" "nacl" {
   for_each = var.create_nacl ? var.nacl_config : {}
 

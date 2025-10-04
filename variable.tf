@@ -19,9 +19,6 @@ variable "subnet_cidrs" { type = list(string) }
 variable "subnet_azs" { type = list(string) }
 variable "public_subnet_indexes" { type = list(number) }
 
-variable "public_route_table" { type = string }
-variable "private_route_table" { type = string }
-
 variable "public_rt_cidr_block" { type = string }
 variable "private_rt_cidr_block" { type = string }
 
@@ -49,5 +46,3 @@ variable "peer_vpc_cidr" { type = string }
 variable "peer_route_table_ids" { type = list(string) }
 
 variable "common_tags" { type = map(string) }
-
-variable "eip_domain" { type = string }

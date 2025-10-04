@@ -24,7 +24,7 @@ resource "aws_route" "peer_private" {
 }
 
 resource "aws_route" "peer_return" {
-  for_each = toset(var.peer_route_table_ids)
+  for_each = var.enable_vpc_peering ? toset(var.peer_route_table_ids) : []
   route_table_id            = each.key
   destination_cidr_block    = var.vpc_cidr
   vpc_peering_connection_id = aws_vpc_peering_connection.peer[0].id
